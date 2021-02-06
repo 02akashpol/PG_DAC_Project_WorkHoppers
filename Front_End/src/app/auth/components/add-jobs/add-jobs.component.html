@@ -1,0 +1,156 @@
+<app-company-header></app-company-header>
+<div class="container-fluid ">
+
+  <div class="row" style="height: 100vh" [formGroup]="fbInput">
+
+
+    <div class="col-6
+      bg-secondary
+      d-flex
+      flex-column
+      text-light
+      justify-content-center
+      align-items-center">
+
+        <div class="
+          font-weight-bold
+           mb-4
+           text-light"
+           style="font-size: 50px;">
+           We’d love to hear from you!!!
+        </div>
+
+        <div class="h3"
+          style="width: 40vw;
+           margin-top: 30px;">
+            Whether you have a question about features, trials, pricing, need a demo, or anything else, our team is ready to answer all your questions.
+        </div>
+
+    </div>
+
+    <div class="col-6
+    bg-light">
+
+
+      <div class="row
+      d-flex
+      flex-column
+      justify-content-center
+      align-items-center"
+      style="margin-top: 60px;">
+
+        <!--
+        <div class="alert"
+        role="alert
+        alert-danger"
+        id="alertId"
+        *ngIf="alertMessage">
+
+          Jobs added successfully.
+
+        </div>
+        -->
+        <div style="color: red;
+        font-size: 20px; margin-bottom: 8px;" innerHTML = "{{ sccMsg }}"></div>
+
+        <h2 class="font-weight-bold
+        mb-4
+        text-info
+        text-center">
+
+        Add Jobs
+
+        </h2>
+
+
+        <div style="width: 20vw;">
+
+          <label>Job Title:</label>
+
+          <input type="email"
+          class="
+          form-control"
+          placeholder=" "
+          formControlName="jobTitle" required>
+
+          <div class="validations" *ngIf="fbInput.controls['jobTitle'].hasError('required') && fbInput.controls['jobTitle'].touched">
+            job title is required*
+          </div>
+
+        </div>
+
+        <div style="width: 20vw;">
+          <label>Job Experience:</label>
+          <input type="email"
+          class="
+          form-control"
+          placeholder=" "
+          formControlName="jobExperience" required>
+
+          <div class="validations" *ngIf="fbInput.controls['jobExperience'].hasError('required') && fbInput.controls['jobExperience'].touched">
+            job experience is required*
+          </div>
+
+        </div>
+
+
+        <div style="width: 20vw;">
+          <label>Job Vacancy:</label>
+          <input type="email"
+          class="
+          form-control"
+          placeholder=" "
+          formControlName="jobVacancy">
+
+          <div class="validations" *ngIf="fbInput.controls['jobVacancy'].hasError('required') && fbInput.controls['jobVacancy'].touched">
+            job vacancy is required*
+          </div>
+
+          <div class="validations"
+          *ngIf="fbInput.controls['jobVacancy'].hasError('pattern')">
+            Enter only numbers in the job vacancy field.
+          </div>
+
+        </div>
+
+        <div style="width: 20vw;">
+          <label>Job Description:</label>
+          <textarea class="form-control"
+          formControlName="jobDescription"
+          placeholder="type here....">
+
+          </textarea>
+
+          <div class="validations" *ngIf="fbInput.controls['jobDescription'].hasError('required') && fbInput.controls['jobDescription'].touched">
+            job description is required*
+          </div>
+
+        </div>
+
+        <div class="d-flex
+        justify-content-center
+        align-items-center"
+        style="width: 25vw;">
+
+          <button type="submit"
+          class="btn
+          btn-md
+          btn-secondary
+          mt-2
+          align-items-center"
+          (click)="jobAddFun()"
+          [disabled]="!fbInput.valid">
+
+            Add Jobs
+
+          </button>
+
+         </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </div>

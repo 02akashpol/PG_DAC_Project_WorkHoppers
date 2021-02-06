@@ -1,0 +1,135 @@
+<app-company-header></app-company-header>
+<div class="container-fluid">
+
+  <div class="row" style="height: 85vh;
+  width: 99vw;">
+
+
+    <form class="col
+    bg-light
+    text-center
+    border border-light
+    p-2"
+    [formGroup]="fbInput">
+
+
+      <div class="row
+      d-flex
+      flex-column
+      justify-content-center
+      align-items-center
+      mt-5">
+
+        <p class="h3
+        font-weight-bold
+        mb-4
+        text-info ">
+           Update your profile
+        </p>
+
+        <div class="mb-2"
+        style="width: 16vw;">
+
+          <small style="font-size: 17px;">
+           User name :
+          </small>
+
+          <input type="text" formControlName="userName"
+          class="form-control" placeholder="enter User name">
+
+          <div class="validations"*ngIf="fbInput.controls['userName'].hasError('required') && fbInput.controls['userName'].touched">
+            user name is required*
+          </div>
+
+        </div>
+
+        <div style="width: 16vw;">
+
+          <small style="font-size: 17px;">
+            UserAddress :
+          </small>
+
+          <input type="text"  placeholder="enter your address"
+          class="form-control" formControlName="userAddress">
+
+          <div class="validations"*ngIf="fbInput.controls['userAddress'].hasError('required') && fbInput.controls['userAddress'].touched">
+            address is required*
+          </div>
+
+        </div>
+
+        <div class="mt-4 mb-2 "
+        style="width: 16vw">
+
+          <small style="font-size: 17px;">
+            Email address :
+          </small>
+
+          <input type="email"
+          class="form-control" formControlName="userEmailId" readonly>
+
+          <!--
+          <div class="validations"*ngIf="fbInput.controls['userEmailId'].hasError('required') && fbInput.controls['userEmailId'].touched">
+            Email address is required*
+          </div>
+          -->
+
+        </div>
+
+        <div class="mt-2"
+        style="width: 16vw;">
+
+          <small style="font-size: 17px;">
+            Contact Number :
+          </small>
+
+
+          <input type="text" placeholder="Contact Number"
+            class="form-control"
+            formControlName="userContactNo">
+
+          <div class="validations"*ngIf="fbInput.controls['userContactNo'].hasError('required') && fbInput.controls['userContactNo'].touched">
+            Contact number is required*
+          </div>
+
+        </div>
+
+
+        <div class="mt-2"
+        style="width: 16vw;">
+
+        <small style="font-size: 17px;">
+          Password :
+        </small>
+
+        <input type="password" placeholder="password"
+          class="form-control"
+          formControlName="userPassword">
+
+          <div class="validations"*ngIf="fbInput.controls['userPassword'].hasError('required') && fbInput.controls['userPassword'].touched">
+            Password is required*
+          </div>
+
+
+        </div>
+
+
+        <button style="width: 8vw;"
+        class="btn btn-md btn-secondary
+        mt-3"
+        [disabled]="!fbInput.valid"
+        (click)="companyupdateProfile()">
+       Update
+        </button>
+
+        <p class="mt-1">By clicking on the <b>Update</b> button the changes will be done in your profile!!</p>
+
+
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

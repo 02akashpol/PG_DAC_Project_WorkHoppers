@@ -1,0 +1,36 @@
+<app-admin-header></app-admin-header>
+<br>
+<br>
+<br>
+
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <thead>
+    <tr style="background-color:rgba(97, 97, 190, 0.938);">
+      <th>Sr.No.</th>
+      <th>JobSeeker Name</th>
+      <th>JobSeeker Password</th>
+      <th>JobSeeker Address</th>
+      <th>JobSeeker Email Id</th>
+      <th>JobSeeker Contact No.</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr style="background-color:rgb(42, 43, 41); color: white; font-size: 15px;" *ngFor="let item of list; let i = index; let c = count">
+      <td>{{i+1}}</td>
+      <td>{{item.userName}}</td>
+      <td>{{item.userPassword}}</td>
+      <td>{{item.userAddress}}</td>
+      <td>{{item.userEmailId}}</td>
+      <td>{{item.userContactNo}}</td>
+      <td>
+
+          <button class="btn btn-sm btn-danger" (click)="deleteJobseekerRecordFun(item.userId)" >
+            <i class="fa fa-remove"></i>Delete</button>
+
+      </td>
+    </tr>
+  </tbody>
+  </table>
+</div>

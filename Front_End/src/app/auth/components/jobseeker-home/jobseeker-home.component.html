@@ -1,0 +1,54 @@
+<div class="container-fluid" style="width: 100%;">
+
+ <div class="sticky-top" style="width: 100%;">
+  <app-jobseeker-header></app-jobseeker-header>
+ </div>
+
+ <div *ngFor="let item of list" >
+    <div class="row mt-1 justify-content-center mb-2 " style="height: 450px; margin-bottom: 10px; margin-top: 10px;">
+      <div class="col-12 col-md-6 rounded border "style="background-color:#b3daff;  margin-bottom: 10px; margin-top: 10px;">
+
+        <div>
+          <label class="font-weight-bold">Job Title:</label>
+          <p class="font-weight-normal">{{item.jobTitle}}</p>
+        </div>
+
+        <div>
+          <label class="font-weight-bold">Job Experience:</label>
+          <p class="font-weight-normal">{{item.jobExperience}}</p>
+        </div>
+
+
+        <div>
+          <label class="font-weight-bold">Job Vacancy:</label>
+          <p class="font-weight-normal">{{item.jobVacancy}}</p>
+
+        </div>
+
+        <div>
+          <label class="font-weight-bold">Job Description:</label>
+          <p class="font-weight-normal">
+            {{item.jobDescription}}
+          </p>
+       </div>
+
+        <div>
+          <button type="submit"
+          class="btn
+          btn-sm
+          font-weight-bold
+          btn-primary
+          mb-1 rounded
+          content-alignment:end">
+
+            Apply Now
+
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<router-outlet></router-outlet>

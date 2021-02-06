@@ -1,0 +1,50 @@
+<app-jobseeker-header></app-jobseeker-header>
+<div class="container-fluid">
+
+  <div class="row
+  justify-content-center
+  align-items-center" style="height: 85vh; margin-left: 500px;
+  width: 50vw;">
+
+      <div class="col-md-12" style="text-underline-position: below;">
+          <h1>Resume Upload</h1>
+      </div>
+        <div class="col-md-6">
+            <input type="file" (change)="onFileChanged($event)">
+
+            <img [src]="imgURL" height="200" *ngIf="imgURL">
+        </div>
+        <div class="col-md-6">
+            <input type="button" (click)="onUpload()" value="upload">
+        </div>
+      <hr />
+      <div class="container row">
+        <div class="col-md-12">
+            <div style="color: red;
+            font-size: 20px; margin-bottom: 8px;" *ngIf=message>{{message}}</div>
+        </div>
+      </div>
+
+      <!--
+      <div class="container row">
+        <div class="col-md-6">
+            <input type="text" class="form-control" id="name" placeholder="image name" [(ngModel)]="imageName"
+                name="name" />
+        </div>
+        <div class="col-md-6">
+            <input type="button" (click)="getImage()" value="Get Image">
+
+        </div>
+      </div>
+      -->
+
+      <div class="container row">
+        <div class="col-md-12">
+            <div *ngIf=retrievedImage>
+                <img [src]="retrievedImage">
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+

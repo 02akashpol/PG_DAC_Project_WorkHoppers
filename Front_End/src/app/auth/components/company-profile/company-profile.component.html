@@ -1,0 +1,45 @@
+<app-company-header></app-company-header>
+
+<router-outlet></router-outlet>
+
+  <div class="container-fluid ">
+
+    <div class="row justify-content-center " style="height:200px; width: 500px; margin-top: 150px;">
+      <div class="col-12 bg-secondary mt-0 rounded justify-content-center" style="margin-top:40px; color: rgba(255, 255, 255, 0.856); margin-left: 900px;" >
+
+        <div hidden>
+          <label style="font-weight: bold; font-size: 18px;">CompanyId : </label>{{this.companyProfile.userId}}
+        </div>
+
+        <div>
+          <label style="font-weight: bold; font-size: 20px;">Your Name : </label>{{this.companyProfile.userName}}
+        </div>
+
+        <div>
+          <label style="font-weight: bold; font-size: 20px;">Your Password : </label>{{this.companyProfile.userPassword}}
+        </div>
+
+        <div>
+          <label style="font-weight: bold; font-size: 20px;">Your Address : </label>{{this.companyProfile.userAddress}}
+        </div>
+
+        <div>
+          <label style="font-weight: bold; font-size: 20px;">Your Email Address : </label>{{this.companyProfile.userEmailId}}
+        </div>
+
+        <div>
+          <label style="font-weight: bold; font-size: 20px;">Your Contact No :  </label>{{this.companyProfile.userContactNo}}
+        </div>
+         <div>
+        <button type="submit"class="btn btn-md btn-danger mt-3" style=" margin-right: 50px; margin-bottom: 100px; " (click)="updateProfile()" >
+            Update
+        </button>
+
+        <button type="submit"class="btn btn-md btn-danger mt-3"  style="margin-right: 150px; margin-bottom: 100px;"   (click)="deleteCompanyProfileFun(companyProfile.userId)">
+          Delete
+        </button>
+        </div>
+
+      </div>
+    </div>
+</div>

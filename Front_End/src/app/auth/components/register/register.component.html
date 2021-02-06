@@ -1,0 +1,190 @@
+<app-welcome-header></app-welcome-header>
+<div class="container-fluid">
+
+  <div class="row" style="height: 100vh;
+  width: 100vw;">
+
+    <div class="col-6
+      d-flex
+      flex-column
+      justify-content-center
+      text-light"
+      style="margin-bottom: 20px;">
+
+        <div class="col"><img src="assets/Register.jpg" style="height: 92vh; margin-left: 0%; object-fit: cover;"></div>
+
+    </div>
+
+    <div class="col-6
+    bg-light
+    text-center
+    border border-light
+    p-2"
+    [formGroup]="fbInput">
+
+
+      <div class="row
+      d-flex
+      flex-column
+      justify-content-center
+      align-items-center
+      mt-5">
+
+        <!--
+        <div class="alert"
+        role="alert
+        alert-danger"
+        id="alertId"
+        *ngIf="alertMessage"
+        style="color: red;
+        font-size: 20px;">
+
+          You have been registered successfully.
+
+        </div>
+        -->
+
+        <div style="color: red;
+        font-size: 20px; margin-bottom: 8px;" innerHTML = "{{ sccMsg }}"></div>
+
+        <p class="h3
+        font-weight-bold
+        mb-4
+        text-info ">
+        REGISTER FORM
+        </p>
+
+        <div class="d-flex justify-content: space-between;" style="width: 250px;" >
+
+          <label style="width: 130px;">
+            <input type="radio" class="option-input radio" name="userType" value="c" formControlName="userType">
+            Company
+          </label>
+
+          <label>
+            <input type="radio" class="option-input radio" name="userType" value="j" formControlName="userType">
+            JobSeeker
+          </label>
+
+        </div>
+
+        <div class="mb-2"
+        style="width: 16vw;">
+
+          <small style="font-size: 17px;">
+            Your name
+          </small>
+
+          <input type="text" formControlName="userName"
+          class="form-control" placeholder="enter your first and last name">
+
+          <div class="validations"*ngIf="fbInput.controls['userName'].hasError('required') && fbInput.controls['userName'].touched">
+            user name is required*
+          </div>
+
+        </div>
+
+        <div style="width: 16vw;">
+
+          <small style="font-size: 17px;">
+            Address
+          </small>
+
+          <input type="text"  placeholder="enter your address"
+          class="form-control" formControlName="userAddress">
+
+          <div class="validations"*ngIf="fbInput.controls['userAddress'].hasError('required') && fbInput.controls['userAddress'].touched">
+            address is required*
+          </div>
+
+        </div>
+
+        <div class="mt-4 mb-2 "
+        style="width: 16vw">
+
+          <small style="font-size: 17px;">
+            Email address
+          </small>
+
+          <input type="email" placeholder="abc@gmail.com"
+          class="form-control" formControlName="userEmailId">
+
+          <div class="validations"*ngIf="fbInput.controls['userEmailId'].hasError('required') && fbInput.controls['userEmailId'].touched">
+            Email address is required*
+          </div>
+          <div class="validations"
+          *ngIf="fbInput.controls['userEmailId'].hasError('pattern')">
+            Invalid email address.
+          </div>
+
+          <small id="emailHelp"
+            class="form-text
+            text-muted
+            mb-2">
+
+            please provide your email address
+
+          </small>
+        </div>
+
+        <div class="mt-2"
+        style="width: 16vw;">
+
+          <small style="font-size: 17px;">
+            Contact Number
+          </small>
+
+
+          <input type="text" placeholder="Contact Number"
+            class="form-control"
+            formControlName="userContactNo">
+
+          <div class="validations"*ngIf="fbInput.controls['userContactNo'].hasError('required') && fbInput.controls['userContactNo'].touched">
+            Contact number is required*
+          </div>
+
+        </div>
+
+
+        <div class="mt-2"
+        style="width: 16vw;">
+
+        <small style="font-size: 17px;">
+          Password
+        </small>
+
+        <input type="password" placeholder="password"
+          class="form-control"
+          formControlName="userPassword">
+
+          <div class="validations"*ngIf="fbInput.controls['userPassword'].hasError('required') && fbInput.controls['userPassword'].touched">
+            Password is required*
+          </div>
+          <div class="validations"
+          *ngIf="fbInput.controls['userPassword'].hasError('pattern')">
+            Invalid password.
+          </div>
+
+        </div>
+
+
+        <button style="width: 8vw;"
+        class="btn btn-md btn-secondary
+        mt-3"
+        [disabled]="!fbInput.valid"
+        (click)="registerFun()">
+        Register
+        </button>
+
+        <p class="mt-1">By clicking <b>Register</b> button you agree to our terms of service</p>
+
+        <a class="text-primary"routerLink="/login">Go to LogIn page</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
